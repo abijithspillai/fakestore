@@ -1,12 +1,24 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouteReuseStrategy, RouterOutlet } from '@angular/router';
+import { Navbar } from "./navbar/navbar";
+import { Footer } from "./footer/footer";
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [RouterOutlet, Navbar, Footer],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
 export class App {
+  collagename="Amal Jyothi"
+
+  person={
+    name:'Roy',
+    email:'roy@gmail.com',
+    contactno:'95336432'
+  }
+  
   protected readonly title = signal('project3');
 }

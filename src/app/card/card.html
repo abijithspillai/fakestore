@@ -1,0 +1,51 @@
+<!-- <div class="card-group" *ngFor="let item of repeat; let i=index">
+  <div class="col-md-4" *ngFor="let item of repeat; let i=index">
+    <img src="https://plus.unsplash.com/premium_photo-1737182592549-0c83f93e2903?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bHV4dXJ5JTIwdmVoaWNsZXxlbnwwfHwwfHx8MA%3D%3D" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrFiENb-YV75VVOQQzfu_tBtGoNTxJAVvalQ&s" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://images8.alphacoders.com/568/568490.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+</div> -->
+
+<div class="container">
+  <div class="row">
+
+    @for (item of products; track item.id) {
+      <div class="col-md-4 col-sm-6 mb-4">
+        <div class="card h-100">
+
+          <img [src]="item.image" alt="Product Image" class="card-img-top product-img" />
+
+          <div class="card-body">
+            <h5 class="card-title">{{ item.title }}</h5>
+            <p class="card-text">${{ item.price }}</p>
+
+            <a [routerLink]="['/singlelistview', item.id]" class="text-primary text-decoration-none">
+              Goto
+            </a>
+          </div>
+
+        </div>
+      </div>
+    }
+
+  </div>
+</div>

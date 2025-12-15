@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Reserve space at the bottom so fixed footer does not cover page content */
+body {
+	padding-bottom: 70px;
+}
