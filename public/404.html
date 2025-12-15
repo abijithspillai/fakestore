@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Page Not Found</title>
+  </head>
+  <body>
+    <script>
+      // SPA fallback for GitHub Pages: load the app's index.html content
+      // while keeping the original URL so client-side router can handle it.
+      fetch('/index.html')
+        .then(function (res) { return res.text(); })
+        .then(function (html) {
+          document.open();
+          document.write(html);
+          document.close();
+        })
+        .catch(function () {
+          // if fetch fails, redirect to site root
+          window.location.replace('/');
+        });
+    </script>
+  </body>
+</html>
